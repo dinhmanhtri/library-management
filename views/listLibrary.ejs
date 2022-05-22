@@ -1,0 +1,50 @@
+<%- include("./layouts/header.ejs") %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 mt-5">
+        <h2 class="alert alert-success text-center">Add New Library</h2>
+        <form method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Library name</label>
+            <input type="text" class="form-control" id="name" name="name" />
+          </div>
+          <div class="mb-3">
+            <label for="librarian" class="form-label">Librarian</label>
+            <input type="text" class="form-control" id="librarian" name="librarian" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col-sm-6 mt-5">
+        <h2 class="alert alert-danger text-center">List of Library</h2>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Librarian</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% var i=1 %>
+              <% data.forEach((item)=> { %>
+                <tr>
+                  <td>
+                    <%= i++ %>
+                  </td>
+                  <td>
+                    <%= item.name %>
+                  </td>
+                  <td>
+                    <%= item.librarian %>
+                  </td>
+                </tr>
+                <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <%- include("./layouts/footer.ejs") %>

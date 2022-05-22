@@ -1,0 +1,43 @@
+<%- include("./layouts/header.ejs") %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5 mt-5">
+        <h2 class="alert alert-success text-center">Update Book</h2>
+        <form action="/book/update/<%= data.id %>" method="PUT">
+          <div class="mb-3">
+            <label for="name" class="form-label">Book name</label>
+            <input type="text" class="form-control" name="name" value="<%= data.name %>" />
+          </div>
+          <div class="mb-3">
+            <label for="library" class="form-label">Library</label>
+            <select class="form-select" aria-label="Default select example" name="library">
+              <optgroup label="Select library">
+                <% libraryData.forEach(function(item){ %>
+                  <option value="<%= item.id %>">
+                    <%= item.name %>
+                  </option>
+                  <% }) %>
+              </optgroup>
+            </select>
+          </div>
+          <div class=" mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" class="form-control" name="author" value="<%= data.author %>" />
+          </div>
+          <div class=" mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" name="quantity" value="<%= data.quantity %>" />
+          </div>
+          <div class=" mb-3">
+            <label for="remainingBook" class="form-label">Remaining book</label>
+            <input type="text" class="form-control" name="remainingBook" value="<%= data.remainingBook %>" />
+          </div>
+          <button type=" submit" class="btn btn-warning">Update</button>
+          <button type="submit" class="btn btn-secondary">Back to List</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <%- include("./layouts/footer.ejs") %>

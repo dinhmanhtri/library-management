@@ -1,0 +1,35 @@
+<%- include("./layouts/header.ejs") %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 mt-5">
+        <h2 class="alert alert-success text-center">Borrow Book</h2>
+        <form action="" method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Student Name</label>
+            <input type="text" class="form-control" id="name" name="name" />
+          </div>
+          <div class="mb-3">
+            <label for="studentId" class="form-label">Student ID</label>
+            <input type="text" class="form-control" id="studentId" name="studentId" />
+          </div>
+          <div class="mb-3">
+            <label for="bookName" class="form-label">Book name</label>
+            <input type="text" class="form-control" id="bookName" name="bookName" />
+          </div>
+          <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" />
+          </div>
+          <div class="mb-3">
+            <label for="borrowDate" class="form-label">Borrow Date</label>
+            <input type="date" class="form-control" id="borrowDate" name="borrowDate" />
+          </div>
+          <button type="submit" class="btn btn-warning">Return</button>
+          <button type="submit" class="btn btn-secondary">Back to List</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <%- include("./layouts/footer.ejs") %>
