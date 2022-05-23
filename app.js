@@ -1,7 +1,7 @@
 const express = require("express");
 const connectDB = require("./db/connectdb");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 const DATABASE_URL = "mongodb://manhtri:123456@127.0.0.1:27017/library";
 const bookRouter = require("./routes/book.routes");
 const libraryRouter = require("./routes/library.routes");

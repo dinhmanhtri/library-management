@@ -61,11 +61,11 @@ class BookController {
   static deleteBookById = async (req, res) => {
     try {
       const result = await BookModel.findByIdAndDelete(req.params.id);
-res.redirect("/book");
+      res.redirect("/book");
     } catch (error) {
-  console.log(error);      
+      console.log(error);
     }
-  };  
+  };
 }
 
 module.exports = BookController;
