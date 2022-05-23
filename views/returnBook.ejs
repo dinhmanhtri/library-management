@@ -19,15 +19,10 @@
             <input type="text" class="form-control" name="bookName" value="<%= borrowBook.bookName.name %>" readonly>
           </div>
           <div class="mb-3">
-            <label for="quantity" class="form-label">Quantity</label>
-            <input type="number" class="form-control" name="quantity" value="<%= borrowBook.quantity %>"/>
-          </div>
-          <div class="mb-3">
             <label for="borrowDate" class="form-label">Borrow Date</label>
             <input type="text" class="form-control" name="borrowDate" value="<%= borrowBook.borrowDate%>"/>
           </div>
           <button type="submit" class="btn btn-primary">Return</button>
-          <button type="submit" class="btn btn-secondary">Back to List</button>
         </form>
       </div>
     </div>

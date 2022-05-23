@@ -8,8 +8,7 @@ class BorrowBookController {
       let book = await BookModel.findOne({ _id: req.body.bookName });
       // console.log(book, "book");
       console.log(req.body, "req.body");
-      const { studentName, studentId, bookName, borrowDate } =
-        req.body;
+      const { studentName, studentId, bookName, borrowDate } = req.body;
       const doc = new BorrowBookModel({
         studentName: studentName,
         studentId: studentId,
