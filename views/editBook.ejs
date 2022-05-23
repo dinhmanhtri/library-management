@@ -4,14 +4,14 @@
     <div class="row">
       <div class="col-sm-5 mt-5">
         <h2 class="alert alert-success text-center">Update Book</h2>
-        <form action="/book/update/<%= data.id %>" method="PUT">
+        <form method="post" action="/book/update/<%= data._id %>">
           <div class="mb-3">
             <label for="name" class="form-label">Book name</label>
-            <input type="text" class="form-control" name="name" value="<%= data.name %>" />
+            <input type="text" class="form-control" id="name" name="name" value="<%= data.name %>" />
           </div>
           <div class="mb-3">
             <label for="library" class="form-label">Library</label>
-            <select class="form-select" aria-label="Default select example" name="library">
+            <select class="form-select" aria-label="Default select example" id="library" name="library">
               <optgroup label="Select library">
                 <% libraryData.forEach(function(item){ %>
                   <option value="<%= item.id %>">
@@ -23,21 +23,20 @@
           </div>
           <div class=" mb-3">
             <label for="author" class="form-label">Author</label>
-            <input type="text" class="form-control" name="author" value="<%= data.author %>" />
+            <input type="text" class="form-control" id="author" name="author" value="<%= data.author %>" />
           </div>
           <div class=" mb-3">
             <label for="quantity" class="form-label">Quantity</label>
-            <input type="number" class="form-control" name="quantity" value="<%= data.quantity %>" />
+            <input type="number" class="form-control" id="quantity" name="quantity" value="<%= data.quantity %>" />
           </div>
           <div class=" mb-3">
-            <label for="remainingBook" class="form-label">Remaining book</label>
-            <input type="text" class="form-control" name="remainingBook" value="<%= data.remainingBook %>" />
+            <label for="borrowedBook" class="form-label">Borrowed Book</label>
+            <input type="text" class="form-control" id="borrowedBook" name="borrowedBook"
+              value="<%= data.borrowedBook %>" readonly/>
           </div>
           <button type=" submit" class="btn btn-warning">Update</button>
-          <button type="submit" class="btn btn-secondary">Back to List</button>
         </form>
       </div>
     </div>
   </div>
-
   <%- include("./layouts/footer.ejs") %>

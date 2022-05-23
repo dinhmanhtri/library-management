@@ -26,10 +26,6 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="quantity" class="form-label">Quantity</label>
-            <input type="number" class="form-control" name="quantity" />
-          </div>
-          <div class="mb-3">
             <label for="borrowDate" class="form-label">Borrow Date</label>
             <input type="date" class="form-control" name="borrowDate" />
           </div>
@@ -45,7 +41,6 @@
               <th scope="col">Student Name</th>
               <th scope="col">Student ID</th>
               <th scope="col">Book name</th>
-              <th scope="col">Quantity</th>
               <th scope="col">Borrow Date</th>
               <th scope="col">Return Date</th>
               <th scope="col">Action</th>
@@ -69,12 +64,11 @@
                     <%= item.bookName.name%>
                   </td>
                   <td>
-                    <%= item.quantity%>
-                  </td>
-                  <td>
                     <%= item.borrowDate%>
                   </td>
-                  <td>45345345</td>
+                  <td>
+                    <%= item.returnDate %>
+                  </td>
                   <td>
                     <form action="/borrow/returnBook/<%= item._id %>" method="get" class="d-inline">
                       <button type="submit" class="btn btn-danger">Return Book</button>

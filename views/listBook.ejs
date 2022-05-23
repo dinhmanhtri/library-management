@@ -28,10 +28,6 @@
             <label for="quantity" class="form-label">Quantity</label>
             <input type="number" class="form-control" id="quantity" name="quantity" />
           </div>
-          <div class="mb-3">
-            <label for="remainingBook" class="form-label">Remaining Book</label>
-            <input type="number" class="form-control" id="remainingBook" name="remainingBook" />
-          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
@@ -45,7 +41,7 @@
               <th scope="col">Library</th>
               <th scope="col">Author</th>
               <th scope="col">Quantity</th>
-              <th scope="col">Remaining book</th>
+              <th scope="col">Borrowed Book</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -69,7 +65,7 @@
                     <%= item.quantity%>
                   </td>
                   <td>
-                    <%= item.remainingBook%>
+                    <%= item.borrowedBook%>
                   </td>
                   <td>
                     <form action="/book/edit/<%= item._id %>" method="get" class="d-inline">

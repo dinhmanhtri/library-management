@@ -5,13 +5,13 @@ class BookController {
   static createBook = async (req, res) => {
     try {
       console.log(req.body, "req.body");
-      const { name, library, author, quantity, remainingBook } = req.body;
+      const { name, library, author, quantity } = req.body;
       const doc = new BookModel({
         name: name,
         library: library,
         author: author,
         quantity: quantity,
-        remainingBook: remainingBook,
+        borrowedBook: null,
       });
       const result = await doc.save();
       console.log(result, "save success");
@@ -36,6 +36,8 @@ class BookController {
   };
 
   static editBook = async (req, res) => {
+    // console.log(req.params.id);
+    // res.render("editBook");
     try {
       const libraryData = await LibraryModel.find();
       const result = await BookModel.findById(req.params.id)
@@ -51,11 +53,12 @@ class BookController {
   static updateBookById = async (req, res) => {
     try {
       const result = await BookModel.findByIdAndUpdate(req.params.id, req.body);
-      console.log(result);
-      res.redirect("/book");
+
+      console.log(result, "result");
     } catch (error) {
       console.log(error);
     }
+    res.redirect("/book");
   };
 
   static deleteBookById = async (req, res) => {
